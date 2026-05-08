@@ -38,7 +38,9 @@ const animState: AnimState = {
 };
 
 const RING_COUNT  = 8;
-const RING_COLORS = ['#C29078', '#D4A84B', '#F5EFE4', '#A06850'];
+/* Ring colours — chosen to read on cream/linen background.
+   Cream removed (would be invisible); deep teal added for contrast.    */
+const RING_COLORS = ['#C29078', '#A06850', '#1D5C5C', '#C17B3F'];
 
 /* ─── Center "heart" — metallic bronze dot (logo reference) ─────────── */
 function HeartCore() {

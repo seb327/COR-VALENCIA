@@ -38,7 +38,7 @@ export function ZoomParallax({ images }: Props) {
                 src={src}
                 alt={alt ?? `Image ${index+1}`}
                 className="h-full w-full object-cover"
-                style={{ filter:'brightness(.78) saturate(.85) sepia(.10)' }}
+                style={{ filter:'brightness(.92) saturate(.90) sepia(.08) contrast(.95)' }}
               />
             </div>
           </motion.div>

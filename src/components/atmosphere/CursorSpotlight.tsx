@@ -20,10 +20,10 @@ export function CursorSpotlight() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-[9997]"
       style={{
-        /* Rose-gold from the COR medallion — softer than gold, warmer than amber */
+        /* Cream theme: copper glow, multiply blend mode darkens onto linen */
         background:
-          'radial-gradient(560px circle at var(--mx, 50%) var(--my, 50%), rgba(194,144,120,0.08), transparent 60%)',
-        mixBlendMode: 'plus-lighter',
+          'radial-gradient(560px circle at var(--mx, 50%) var(--my, 50%), rgba(160,104,80,0.10), transparent 60%)',
+        mixBlendMode: 'multiply',
       }}
     />
   );

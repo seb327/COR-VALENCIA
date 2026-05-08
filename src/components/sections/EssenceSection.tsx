@@ -57,7 +57,7 @@ export function EssenceSection() {
               key={i}
               className="essence-line font-display text-[clamp(2.8rem,7vw,7rem)] font-medium leading-[1.0]"
               style={{
-                color:     i === t.essence.lines.length - 1 ? 'var(--gold)' : 'var(--fg)',
+                color:     i === t.essence.lines.length - 1 ? 'var(--copper)' : 'var(--fg)',
                 fontStyle: i === t.essence.lines.length - 1 ? 'italic' : 'normal',
                 opacity:   0,
               }}
@@ -74,7 +74,7 @@ export function EssenceSection() {
             {t.essence.body}
           </p>
           <div className="essence-aside flex flex-col gap-4 border-l pl-6"
-               style={{ borderColor: 'var(--gold)', opacity: 0 }}>
+               style={{ borderColor: 'var(--copper)', opacity: 0 }}>
             <p className="font-display text-[14px] font-light italic leading-[1.7]"
                style={{ color: 'var(--fg-soft)' }}>
               {t.essence.aside}

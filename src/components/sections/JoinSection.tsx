@@ -39,7 +39,7 @@ export function JoinSection() {
         <p className="cor-label mb-5">{t.join.label}</p>
         <h2 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.0]">
           <span style={{ color: 'var(--fg)' }}>{t.join.title}</span>
-          <br /><em style={{ color: 'var(--gold)' }}>{t.join.titleEm}</em>
+          <br /><em style={{ color: 'var(--copper)' }}>{t.join.titleEm}</em>
         </h2>
         <p className="mt-8 max-w-[42ch] text-[15px] font-light leading-[1.85]"
            style={{ color: 'var(--fg-soft)' }}>
@@ -51,13 +51,13 @@ export function JoinSection() {
 
         {/* Newsletter card */}
         <BentoCard className="join-reveal flex flex-col gap-7 lg:col-span-5">
-          <span className="font-display text-[12px] italic" style={{ color: 'var(--gold)' }}>
+          <span className="font-display text-[12px] italic" style={{ color: 'var(--copper)' }}>
             {lang === 'en' ? 'Newsletter' : 'Boletín'}
           </span>
 
           {emailSent ? (
             <p className="font-display text-[18px] font-light italic leading-relaxed"
-               style={{ color: 'var(--gold)' }}>
+               style={{ color: 'var(--copper)' }}>
               ✓ {t.join.sent}
             </p>
           ) : (
@@ -95,7 +95,7 @@ export function JoinSection() {
 
         {/* Contact card */}
         <BentoCard className="join-reveal flex flex-col gap-7 lg:col-span-7">
-          <span className="font-display text-[12px] italic" style={{ color: 'var(--gold)' }}>
+          <span className="font-display text-[12px] italic" style={{ color: 'var(--copper)' }}>
             {t.join.contactLabel}
           </span>
 

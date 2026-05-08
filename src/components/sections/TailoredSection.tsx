@@ -43,7 +43,7 @@ export function TailoredSection() {
           <h2 className="tailor-reveal font-display text-[clamp(2.4rem,5.5vw,4.8rem)] font-medium leading-[1.05]"
               style={{ opacity: 0 }}>
             <span style={{ color: 'var(--fg)' }}>{t.tailored.title}</span>
-            <br /><em style={{ color: 'var(--gold)' }}>{t.tailored.titleEm}</em>
+            <br /><em style={{ color: 'var(--copper)' }}>{t.tailored.titleEm}</em>
           </h2>
 
           <p className="tailor-reveal max-w-[44ch] text-[15px] font-light leading-[1.85]"
@@ -63,7 +63,7 @@ export function TailoredSection() {
                   backdropFilter: 'blur(8px)',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = 'var(--gold)';
+                  (e.currentTarget as HTMLElement).style.color = 'var(--copper)';
                   (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,75,0.40)';
                 }}
                 onMouseLeave={(e) => {
@@ -81,7 +81,7 @@ export function TailoredSection() {
         <div className="lg:col-span-6">
           <BentoCard className="tailor-reveal flex flex-col gap-7" as="aside">
             <p className="font-display text-[18px] font-light italic leading-[1.6]"
-               style={{ color: 'var(--gold)' }}>
+               style={{ color: 'var(--copper)' }}>
               "{t.tailored.prompt}"
             </p>
 
@@ -115,7 +115,7 @@ export function TailoredSection() {
                         id={id} type={type} required
                         className="rounded-full px-5 py-3 text-[14px] font-light outline-none transition-colors duration-300"
                         style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', color: 'var(--fg)' }}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--gold)')}
+                        onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--copper)')}
                         onBlur={ (e) => (e.currentTarget.style.borderColor = 'var(--card-border)')}
                       />
                     </div>
@@ -131,13 +131,13 @@ export function TailoredSection() {
                     id="msg" rows={4} required
                     className="resize-none rounded-2xl px-5 py-3 text-[14px] font-light leading-[1.6] outline-none transition-colors duration-300"
                     style={{ background: 'var(--input-bg)', border: '1px solid var(--card-border)', color: 'var(--fg)' }}
-                    onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--gold)')}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--copper)')}
                     onBlur={ (e) => (e.currentTarget.style.borderColor = 'var(--card-border)')}
                   />
                 </div>
 
                 <button type="submit" className="pill mt-2 w-fit"
-                        style={{ background: 'var(--gold)', color: 'var(--bg)' }}>
+                        style={{ background: 'var(--copper)', color: 'var(--bg)' }}>
                   {t.tailored.cta}
                 </button>
               </form>

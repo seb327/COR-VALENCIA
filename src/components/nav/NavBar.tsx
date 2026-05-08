@@ -27,8 +27,8 @@ export function NavBar() {
         scrolled ? 'border-b py-3' : 'py-5',
       )}
       style={{
-        background:     scrolled ? 'rgba(27,42,74,.78)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        background:     scrolled ? 'rgba(245,239,228,.85)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px) saturate(140%)' : 'none',
         borderColor:    'var(--border)',
       }}
     >
@@ -94,7 +94,7 @@ export function NavBar() {
       {/* Mobile menu */}
       {open && (
         <div className="flex flex-col gap-5 px-6 pb-8 pt-6 md:hidden"
-             style={{ background:'rgba(27,42,74,.97)' }}>
+             style={{ background:'rgba(245,239,228,.97)', backdropFilter:'blur(20px)' }}>
           {NAV.map(({ label, href }) => (
             <a key={href} href={href} className="text-sm no-underline"
                style={{ color: 'var(--fg-soft)' }}

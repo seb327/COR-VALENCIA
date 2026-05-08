@@ -53,7 +53,7 @@ export function GallerySection() {
             {t.gallery.title}
           </span>
           <span className="block text-[clamp(2.4rem,6vw,5.2rem)] font-medium italic"
-                style={{ color: 'var(--gold)' }}>
+                style={{ color: 'var(--copper)' }}>
             {t.gallery.titleEm}
           </span>
         </h2>

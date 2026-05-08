@@ -65,7 +65,7 @@ export function LiveSection() {
           </p>
 
           <p className="live-reveal max-w-[52ch] font-display text-[16px] font-light italic leading-[1.7]"
-             style={{ color: 'var(--gold)', opacity: 0 }}>
+             style={{ color: 'var(--copper)', opacity: 0 }}>
             {t.live.gift}
           </p>
 
@@ -86,7 +86,7 @@ export function LiveSection() {
           <BentoCard className="live-reveal flex flex-col gap-7" as="aside">
             <header className="flex flex-col gap-2 border-b pb-6"
                     style={{ borderColor: 'var(--card-border)' }}>
-              <span className="font-display text-[12px] italic" style={{ color: 'var(--gold)' }}>RSVP</span>
+              <span className="font-display text-[12px] italic" style={{ color: 'var(--copper)' }}>RSVP</span>
               <h3 className="font-display text-[1.6rem] font-medium leading-tight"
                   style={{ color: 'var(--fg)' }}>
                 {t.live.formLabel}
@@ -103,7 +103,7 @@ export function LiveSection() {
                   ✓ {lang === 'en' ? 'held' : 'reservado'}
                 </span>
                 <p className="font-display text-[18px] font-light italic leading-relaxed"
-                   style={{ color: 'var(--gold)' }}>
+                   style={{ color: 'var(--copper)' }}>
                   {t.live.sent}
                 </p>
               </div>

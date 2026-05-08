@@ -3,7 +3,7 @@ import { gsap }              from 'gsap';
 import { ScrollTrigger }     from 'gsap/ScrollTrigger';
 import { Activity, Wind, Hand, Sparkles } from 'lucide-react';
 import { useLanguage }       from '@/components/providers/LanguageProvider';
-import { BentoCard }         from '@/components/ui/BentoCard';
+import { IMG }               from '@/lib/images';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +47,7 @@ export function PracticeSection() {
           <h2 className="font-display text-[clamp(2.4rem,6vw,5.2rem)] font-medium leading-[1.05]">
             <span style={{ color: 'var(--fg)' }}>{t.practice.title}</span>
             <br />
-            <em style={{ color: 'var(--gold)' }}>{t.practice.titleEm}</em>
+            <em style={{ color: 'var(--copper)' }}>{t.practice.titleEm}</em>
           </h2>
         </div>
         <p className="max-w-[28ch] text-[14px] font-light leading-[1.8]"
@@ -56,39 +56,55 @@ export function PracticeSection() {
         </p>
       </div>
 
-      {/* 4 pillars — bento grid */}
+      {/* 4 pillars — bento grid with somatic photography */}
       <div className="pillars-grid grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {t.practice.pillars.map((p, i) => {
           const Icon = ICONS[i];
+          const img  = IMG.practice[i];
           return (
-            <BentoCard key={p.name}
-              className="pillar-card group flex flex-col gap-7"
-              as="article">
-              <div
-                className="flex h-12 w-12 items-center justify-center rounded-full transition-colors duration-700 group-hover:scale-110"
-                style={{
-                  background: 'rgba(212,168,75,0.08)',
-                  color:      'var(--gold)',
-                  border:     '1px solid rgba(212,168,75,0.20)',
-                }}
-              >
-                <Icon size={20} strokeWidth={1.1} />
+            <article
+              key={p.name}
+              className="pillar-card bento group flex flex-col overflow-hidden p-0"
+            >
+              {/* Image header */}
+              <div className="relative h-44 w-full overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="img-soft h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                {/* Bottom fade so text below reads cleanly */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16"
+                     style={{ background: 'linear-gradient(to bottom, transparent, rgba(245,239,228,.55))' }} />
+                {/* Icon badge floating over image */}
+                <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full backdrop-blur-md transition-transform duration-700 group-hover:scale-110"
+                     style={{
+                       background: 'rgba(245,239,228,.85)',
+                       color:      'var(--copper)',
+                       border:     '1px solid rgba(160,104,80,.30)',
+                     }}>
+                  <Icon size={16} strokeWidth={1.2} />
+                </div>
               </div>
 
-              <span className="font-display text-[12px] italic" style={{ color: 'var(--rose)' }}>
-                0{i+1}
-              </span>
+              {/* Content */}
+              <div className="flex flex-1 flex-col gap-5 p-7">
+                <span className="font-display text-[12px] italic" style={{ color: 'var(--rose)' }}>
+                  0{i+1}
+                </span>
 
-              <h3 className="font-display text-[clamp(1.6rem,2.6vw,2.2rem)] font-medium leading-[1.1]"
-                  style={{ color: 'var(--fg)' }}>
-                {p.name}
-              </h3>
+                <h3 className="font-display text-[clamp(1.5rem,2.4vw,2rem)] font-medium leading-[1.1]"
+                    style={{ color: 'var(--fg)' }}>
+                  {p.name}
+                </h3>
 
-              <p className="font-display text-[14px] font-light italic leading-[1.7]"
-                 style={{ color: 'var(--fg-soft)' }}>
-                — {p.quote}
-              </p>
-            </BentoCard>
+                <p className="font-display text-[14px] font-light italic leading-[1.7]"
+                   style={{ color: 'var(--fg-soft)' }}>
+                  — {p.quote}
+                </p>
+              </div>
+            </article>
           );
         })}
       </div>
