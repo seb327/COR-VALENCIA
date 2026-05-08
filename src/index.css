@@ -1,63 +1,67 @@
 @import "tailwindcss";
 
 /* ────────────────────────────────────────────────────────────────────────
-   COR València — LIGHT THEME
-   Cream/linen primary surface (matches the logo background), midnight as
-   text/grounding accent. Rose-gold + copper + amber as warm accents.
+   COR València — Brand-board aligned tokens
+   Deep Charcoal background · Warm Ivory text · Terracotta Clay accent
+   Cormorant Garamond display · Montserrat body
+   "Nervous System & Reconnection"  ·  "soft landing"
    ──────────────────────────────────────────────────────────────────────── */
 
 @theme {
-  --color-bg-cream:    #F5EFE4;   /* primary surface — linen           */
-  --color-deep:        #1B2A4A;   /* midnight — used as text/accent    */
-  --color-amber:       #C17B3F;   /* burnt amber — CTAs, warmth        */
-  --color-gold-bright: #D4A84B;   /* original soft gold — used in 3D   */
-  --color-teal:        #1D5C5C;   /* deep teal                         */
-  --color-rose:        #C29078;   /* rose-gold from medallion          */
-  --color-copper:      #A06850;   /* deeper bronze — text-readable     */
+  --color-charcoal:   #1F1F1F;   /* Deep Charcoal — primary surface  */
+  --color-ivory:      #F7F3EE;   /* Warm Ivory   — primary text      */
+  --color-sand:       #D8C7B5;   /* Sand Beige   — soft secondary    */
+  --color-terracotta: #B56A54;   /* Terracotta   — primary accent    */
+  --color-ocean:      #6D8C98;   /* Ocean Blue   — subtle accent     */
 
-  --font-display: "Playfair Display", "Cormorant Garamond", serif;
-  --font-sans:    "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Cormorant Garamond", "Playfair Display", serif;
+  --font-sans:    "Montserrat", "Inter", system-ui, -apple-system, sans-serif;
 }
 
 :root {
   /* Surface + text */
-  --bg:           #F5EFE4;     /* cream / linen           */
-  --bg-deeper:    #EBE3D3;     /* slightly deeper linen   */
-  --fg:           #1B2A4A;     /* midnight text           */
-  --fg-soft:      rgba(27,42,74,.78);
-  --fg-muted:     rgba(27,42,74,.50);
+  --bg:           #1F1F1F;
+  --bg-deeper:    #161616;
+  --fg:           #F7F3EE;
+  --fg-soft:      rgba(247,243,238,.78);
+  --fg-muted:     rgba(247,243,238,.48);
 
-  /* Brand accents */
-  --amber:        #C17B3F;
-  --gold:         #B08A2E;     /* darker gold — readable on cream      */
-  --gold-bright:  #D4A84B;     /* original — preserved for 3D / pulse  */
-  --teal:         #1D5C5C;
-  --rose:         #A06850;     /* deeper rose — readable on cream      */
-  --copper:       #A06850;
-  --deep:         #1B2A4A;     /* always midnight, regardless of theme */
+  /* Brand accents — name kept stable so components don't break.
+     New values reflect the brand board (no blue as primary).      */
+  --terracotta:  #B56A54;
+  --sand:        #D8C7B5;
+  --ocean:       #6D8C98;
+
+  --amber:        #B56A54;     /* Terracotta — primary CTA tone     */
+  --copper:       #B56A54;     /* Terracotta — italic emphasis      */
+  --rose:         #D8C7B5;     /* Sand Beige — soft secondary       */
+  --gold:         #D8C7B5;     /* Sand Beige — italic accent        */
+  --gold-bright:  #B56A54;     /* Terracotta — heart in 3D          */
+  --teal:         #6D8C98;     /* Ocean Blue — subtle only          */
+  --deep:         #1F1F1F;
 
   /* Surfaces */
-  --border:       rgba(27,42,74,.12);
-  --border-soft:  rgba(27,42,74,.07);
-  --card-bg:      rgba(27,42,74,.025);
-  --card-bg-hover:rgba(193,123,63,.06);   /* warm amber hover */
-  --card-border:  rgba(27,42,74,.10);
-  --input-bg:     rgba(27,42,74,.025);
+  --border:       rgba(247,243,238,.10);
+  --border-soft:  rgba(247,243,238,.06);
+  --card-bg:      rgba(247,243,238,.04);
+  --card-bg-hover:rgba(181,106,84,.07);
+  --card-border:  rgba(247,243,238,.09);
+  --input-bg:     rgba(247,243,238,.04);
 }
 
 /* ─── Reset ────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  /* Linen ground with rose-gold + copper warm radial glows.
-     The 3D Frequency Core renders ON TOP of this body bg.    */
+  /* Charcoal ground with terracotta + sand warm radial glows.
+     The 3D Frequency Core renders ON TOP of this body bg.       */
   background:
-    radial-gradient(ellipse 70% 55% at 80% 15%, rgba(193,123,63,.10)  0%, transparent 62%),  /* amber */
-    radial-gradient(ellipse 55% 40% at 15% 85%, rgba(160,104,80,.08)  0%, transparent 62%),  /* copper */
-    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(212,168,75,.05)  0%, transparent 70%),  /* gold soft */
+    radial-gradient(ellipse 70% 55% at 80% 15%, rgba(181,106,84,.10) 0%, transparent 60%),  /* terracotta glow */
+    radial-gradient(ellipse 60% 40% at 15% 85%, rgba(216,199,181,.06) 0%, transparent 60%), /* sand glow       */
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(109,140,152,.04) 0%, transparent 65%), /* ocean — subtle  */
     var(--bg);
   background-attachment: fixed;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 body {
@@ -67,12 +71,13 @@ body {
   font-family:             var(--font-sans), system-ui, sans-serif;
   font-weight:             300;
   line-height:             1.7;
+  letter-spacing:          0.01em;
   -webkit-font-smoothing:  antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x:              hidden;
 }
 
-/* ─── Linen / stone / skin grain ─ multiply blends well on cream ────── */
+/* ─── Linen / stone / skin grain — overlay on dark charcoal ────────── */
 body::after {
   content: '';
   position: fixed;
@@ -80,42 +85,43 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  opacity: 0.07;
-  mix-blend-mode: multiply;   /* darkens slightly on cream → linen feel */
+  opacity: 0.06;
+  mix-blend-mode: overlay;
 }
 
 /* ─── Scrollbar ────────────────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 1px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--copper); }
+::-webkit-scrollbar-thumb { background: var(--terracotta); }
 
 /* ─── Selection ────────────────────────────────────────────────────── */
-::selection { background: rgba(193,123,63,.22); color: var(--amber); }
+::selection { background: rgba(181,106,84,.25); color: var(--ivory); }
 
 /* ─── Typography ───────────────────────────────────────────────────── */
 .font-display { font-family: var(--font-display); }
 .font-sans    { font-family: var(--font-sans); }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  font-family:    var(--font-display);
+  letter-spacing: -0.005em;
+  font-weight:    400;
 }
 
 /* ─── Word-reveal utility ──────────────────────────────────────────── */
 .word-clip  { display: inline-block; overflow: hidden; vertical-align: bottom; line-height: 1.05; }
 .word-inner { display: inline-block; will-change: transform, opacity; }
 
-/* ─── Soft section label — italic Playfair, copper for cream contrast ─ */
+/* ─── Soft section label — italic Cormorant in terracotta ─────────── */
 .cor-label {
   font-family:    var(--font-display);
   font-style:     italic;
   font-weight:    400;
   font-size:      14px;
-  letter-spacing: 0.01em;
-  color:          var(--copper);
+  letter-spacing: 0.02em;
+  color:          var(--terracotta);
 }
 
-/* ─── Bento card — translucent midnight glass on cream ─────────────── */
+/* ─── Bento card — terracotta-tinted glass on charcoal ─────────────── */
 .bento {
   position:        relative;
   border-radius:   1.5rem;
@@ -128,9 +134,9 @@ h1, h2, h3, h4, h5 {
 }
 .bento:hover {
   background:   var(--card-bg-hover);
-  border-color: rgba(193,123,63,.30);
-  box-shadow:   0 30px 80px -20px rgba(27,42,74,.14),
-                inset 0 1px 0 rgba(245,239,228,.40);
+  border-color: rgba(181,106,84,.30);
+  box-shadow:   0 30px 80px -20px rgba(0,0,0,.55),
+                inset 0 1px 0 rgba(247,243,238,.06);
 }
 
 /* ─── Pill button ──────────────────────────────────────────────────── */
@@ -140,23 +146,24 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
   border-radius:   9999px;
   padding:         0.95rem 2.25rem;
+  font-family:     var(--font-sans);
   font-size:       11px;
-  letter-spacing:  0.18em;
+  letter-spacing:  0.20em;
   text-transform:  uppercase;
-  font-weight:     400;
+  font-weight:     500;
   transition:      all 600ms ease;
   cursor:          pointer;
   text-decoration: none;
 }
 .pill-primary {
-  background: var(--amber);
-  color:      #FFFCF5;            /* near-white text on amber */
-  box-shadow: 0 12px 32px -8px rgba(193,123,63,.40);
+  background: var(--terracotta);
+  color:      var(--ivory);
+  box-shadow: 0 14px 38px -10px rgba(181,106,84,.55);
 }
 .pill-primary:hover {
-  background: var(--copper);
+  background: #9A5A47;          /* darker terracotta on hover */
   transform:  translateY(-1px);
-  box-shadow: 0 18px 40px -8px rgba(160,104,80,.45);
+  box-shadow: 0 18px 44px -10px rgba(181,106,84,.65);
 }
 .pill-ghost {
   background: transparent;
@@ -168,9 +175,9 @@ h1, h2, h3, h4, h5 {
   color:        var(--fg);
 }
 
-/* ─── Soft image filter — warm sepia-tinted, slightly desaturated ──── */
+/* ─── Cinematic image filter — dark, moody, warm ───────────────────── */
 .img-soft {
-  filter: saturate(0.92) sepia(0.08) brightness(0.97);
+  filter: brightness(0.68) saturate(1.08) sepia(0.16) contrast(1.06);
 }
 
 /* ─── Mobile-fallback breath animation ─────────────────────────────── */
